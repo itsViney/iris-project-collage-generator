@@ -108,7 +108,6 @@ const state = {
 
 const stage = document.querySelector("#stage");
 const templateList = document.querySelector("#templateList");
-const templateName = document.querySelector("#templateName");
 const backgroundColor = document.querySelector("#backgroundColor");
 const formatSelect = document.querySelector("#formatSelect");
 const gapControl = document.querySelector("#gapControl");
@@ -119,7 +118,6 @@ const fileInput = document.querySelector("#fileInput");
 const slotTools = document.querySelector("#slotTools");
 const clearButton = document.querySelector("#clearButton");
 const downloadButton = document.querySelector("#downloadButton");
-const resetViewButton = document.querySelector("#resetViewButton");
 
 let activeDrag = null;
 
@@ -164,7 +162,6 @@ function selectTemplate(templateId) {
 
 function renderStage() {
   const template = getTemplate();
-  templateName.textContent = template.name;
   stage.style.background = state.background;
   stage.innerHTML = "";
   const layer = document.createElement("div");
@@ -586,11 +583,6 @@ radiusControl.addEventListener("input", (event) => {
 
 clearButton.addEventListener("click", clearImages);
 downloadButton.addEventListener("click", downloadCollage);
-resetViewButton.addEventListener("click", () => {
-  state.selectedSlotId = null;
-  renderStage();
-  renderSlotTools();
-});
 
 syncPreferenceControls();
 renderTemplates();

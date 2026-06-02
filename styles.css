@@ -241,28 +241,6 @@ select {
   min-width: 0;
 }
 
-.toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, .74);
-  border-bottom: 1px solid var(--line);
-}
-
-.toolbar div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.toolbar span {
-  color: var(--muted);
-  font-size: .9rem;
-}
-
 .stage-wrap {
   display: grid;
   flex: 1;
@@ -274,7 +252,7 @@ select {
 
 .stage {
   position: relative;
-  width: min(100%, calc((100vh - 116px) * 1.17647));
+  width: min(100%, calc((100vh - 48px) * 1.17647));
   max-width: 1180px;
   aspect-ratio: 2000 / 1700;
   overflow: hidden;
@@ -357,8 +335,4 @@ select {
     grid-template-columns: 1fr;
   }
 
-  .toolbar {
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
