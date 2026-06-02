@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iris Project Collage Generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="controls" aria-label="Collage controls">
+        <div class="brand">
+          <div>
+            <h1>Iris Project Collage Generator</h1>
+            <p>Drop images into the slots to create a collage then export it as a PNG or JPEG.</p>
+          </div>
+        </div>
+
+        <section class="control-group">
+          <h2>Layout</h2>
+          <div class="template-list" id="templateList" role="radiogroup" aria-label="Template layout"></div>
+        </section>
+
+        <section class="control-group">
+          <h2>Canvas</h2>
+          <label class="field">
+            <span>Background</span>
+            <input type="color" id="backgroundColor" value="#72121e">
+          </label>
+          <label class="field">
+            <span>Format</span>
+            <select id="formatSelect">
+              <option value="image/png">PNG</option>
+              <option value="image/jpeg">JPEG</option>
+            </select>
+          </label>
+          <label class="range-field">
+            <span>Tile spacing <output id="gapValue">30 px</output></span>
+            <input id="gapControl" type="range" min="0" max="80" step="1" value="30">
+          </label>
+          <label class="range-field">
+            <span>Corner rounding <output id="radiusValue">0 px</output></span>
+            <input id="radiusControl" type="range" min="0" max="80" step="1" value="0">
+          </label>
+        </section>
+
+        <section class="control-group">
+          <h2>Selected Slot</h2>
+          <div class="slot-tools" id="slotTools">
+            <p class="muted">Select a filled slot to adjust it.</p>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button class="secondary" id="clearButton" type="button">Clear Images</button>
+          <button class="primary" id="downloadButton" type="button">Download Collage</button>
+        </div>
+      </aside>
+
+      <section class="workspace" aria-label="Collage preview">
+        <div class="toolbar">
+          <div>
+            <strong id="templateName">Website Showcase</strong>
+          </div>
+          <button class="secondary compact" id="resetViewButton" type="button">Reset</button>
+        </div>
+        <div class="stage-wrap">
+          <div class="stage" id="stage" aria-label="Editable collage canvas"></div>
+        </div>
+      </section>
+    </main>
+
+    <input id="fileInput" type="file" accept="image/*" hidden>
+    <script src="app.js"></script>
+  </body>
+</html>
